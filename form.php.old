@@ -1,0 +1,24 @@
+<?php
+$db_user = 'root';
+$db_pass = '';
+$db_name = 'distances';
+$db_host = 'localhost';
+
+$mysqli = new mysqli($db_host, $db_user, $db_pass, $db_name);
+
+if ($mysqli->connect_errno) {
+printf("Connect failed: %s\n", $mysqli->connect_error);
+     exit();
+ } else {
+     echo 'Connected';
+ }
+
+$result = $mysqli->query("SELECT * FROM distances");
+
+while($row = $result->fetch_object()) {
+	$results[] = $row;
+}
+
+print_r($results);
+
+$result->close();
