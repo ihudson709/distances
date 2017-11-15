@@ -70,7 +70,7 @@ while($row = $result->fetch_assoc()) {
 
 	$output1 ="<table border=1px><tr><td>$travelDate</td><td>{$row['start']} to {$row['end']}</td><td>$purpose</td><td>{$row['distance']}</td></tr></table>";
 
-	echo $output1;
+	echo $output1; 
 
 }
 
