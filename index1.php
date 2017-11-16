@@ -285,6 +285,8 @@ $result->close(); // Close DB connection
 
 </form>
 
+console.log ($start,$end,$purpose,$distance);
+
 
 </body>
 </html>

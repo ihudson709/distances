@@ -12,8 +12,10 @@ printf("Connect failed: %s\n", $mysqli->connect_error);
  }
 
  //Get travel date
-if (isset ($_POST['travelDate']))
+//if (isset ($_POST['travelDate']))
+if (($_POST['travelDate'])=="")
 {
+echo ("Please choose a travel date.");
 $travelDate = $_POST['travelDate'];
 
 // Change date Format
@@ -21,7 +23,9 @@ $travelDate = $_POST['travelDate'];
 
 } else {
 
-	echo ("Please choose a travel date.");
+	$travelDate = $_POST['travelDate'];
+
+	//echo ("Please choose a travel date.");
 }
 
 // Get "Start" select option value
@@ -70,9 +74,10 @@ while($row = $result->fetch_assoc()) {
 
 	$output1 ="<table border=1px><tr><td>$travelDate</td><td>{$row['start']} to {$row['end']}</td><td>$purpose</td><td>{$row['distance']}</td></tr></table>";
 
-	echo $output1; 
+	echo $output1;
 
 }
+
 
 $result->close(); // Close DB connection
 ?>
